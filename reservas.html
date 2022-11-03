@@ -5,47 +5,218 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas</title>
-</head>
-<body>
-    <h2>Reservas</h2>
-    <form action="#">
-        <fieldset>
-            <label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombreReserva" required>
-            <label for="telefonoReserva">Teléfono:</label><input type="tel" name="telefonoReserva" id="telefonoReserva" required>
-            <label for="emailReserva">Email:</label><input type="email" name="emailReserva" id="emailReserva" required>
-            <label for="date">Fecha:</label><input type="date" name="date" id="date">
-
-            <label for="hora">Franja horaria:</label><select name="time" id="time">
-                    <option value="Almuerzo">Almuerzo</option>
-                    <option value="Cena">Cena</option>
+    <link rel="stylesheet" href="global.css">
     
-            </select>
 
-            <label for="comensales">Comensales:</label><select name="comensales" id="comensales">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
+    <style>
 
-            </select>
 
-            <label for="especiales">Especiales:</label><select name="especiales" id="especiales">
-                    <option value="especial1">especial1</option>
-                    <option value="especial2">especial2</option>
-                    <option value="especial3">especial3</option>
-                    <option value="especial4">especial4</option>
-                    <option value="especial5">especial5</option>
-            </select>
+        /* AÑADIR EXCEPCIONES EN MEDIAQUERY PARA EL DISPLAY DE LABEL E INPUT CAMBIARLOS A BLOCK */
+        #formwrap {
+            background-color: bisque;
+            padding: 20px;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-            <textarea name="comentarios" id="comentarios" cols="30" rows="10">Comentarios, alérgenos, preferencias...</textarea>
+        form {
+            margin-top: 20px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align:left;
+            padding-left: 20px;
+            font-size: 20px;
+            padding: 0 50px;
+        }
 
-            <button id="acceso">Validar</button>
-        </fieldset>
-    </form>
+        h2 {
+            font-size: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            
+        }
+
+        fieldset label {
+            margin-left: auto;
+            margin-right: auto;
+            display: inline-flex;
+        }
+
+        fieldset label input{
+            margin-left: 20px;
+            margin-top: 20px;
+
+        }
+
+        select {
+            margin-top: 20px;
+        }
+
+        #comentarios {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        #reservar-btn {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+
+        #mesas {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: row;
+            margin-right: auto;
+        }
+
+        #mesa1peque {
+            margin-left: 13%;
+        }
+
+        #mesasBig {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 8%;
+            margin-right: auto;
+            
+        }
+        
+        #mesaswrap {
+            display:block;
+            min-width: 50px;
+            min-height: 50px;
+            margin-left: 20vw;
+            margin-right: auto;
+        }
+
+        .circulo {
+        text-align: center;
+        margin-left: 30px;
+        line-height: 40px;
+        width: 50px;
+        height: 50px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: #b0f2c2;
+        
+        }
+
+        .circulo2 {
+        text-align: center;
+        margin-left: 30px;
+        line-height: 60px;
+        width: 70px;
+        height: 70px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: #5cb85c;
+        }
+        
+        
+    </style>
+</head>
+
+
+<body>
+    <!-- FALTA NAV AQUI -->
+    <h2>Reservas</h2>
+    <div id="formwrap">
+        <form action="#">
+            <fieldset>
+                <label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombre" required>
+                <label for="telefono">Teléfono:</label><input type="tel" name="telefono" id="telefono" required>
+                <label for="email">Email:</label><input type="email" name="email" id="email" required>
+                <label for="fecha">Fecha:</label><input type="date" name="fecha" id="fecha">
+                <label for="hora">Franja horaria:</label><select name="hora" id="hora">
+                        <option value="Almuerzo">Almuerzo</option>
+                        <option value="Cena">Cena</option>
+        
+                </select>
+
+                <label for="comensales">Comensales:</label><select name="comensales" id="comensales">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+
+                </select>
+
+                <label for="especiales">Especiales:</label><select name="especiales" id="especiales">
+                        <option value="especial1">especial1</option>
+                        <option value="especial2">especial2</option>
+                        <option value="especial3">especial3</option>
+                        <option value="especial4">especial4</option>
+                        <option value="especial5">especial5</option>
+                </select>
+
+                <div id="mesaswrap">
+
+                    <div id="mesas">
+                        <div id="mesapeque" class="circulo">
+                            <input type="radio" name="mesa" id="mesa1" class="disponible">
+                        </div>
+                        <div class="circulo">
+                            <input type="radio" name="mesa" id="mesa2" class="disponible">
+                        </div>
+                        <div class="circulo">
+                            <input type="radio" name="mesa" id="mesa3" class="disponible">
+                        </div>
+                        <div class="circulo">
+                            <input type="radio" name="mesa" id="mesa4" class="disponible">
+                        </div>
+                        <div class="circulo">
+                            <input type="radio" name="mesa" id="mesa5" class="disponible">
+                        </div>
+                    </div>
+                    
+                    <div id="mesasBig">
+                        <div id="mesagrande" class="circulo2">
+                            <input type="radio" name="mesa" id="mesa6" class="disponible2" value="6">
+                        </div>
+                        <div class="circulo2">
+                            <input type="radio" name="mesa" id="mesa7" class="disponible2">
+                        </div>
+                        <div class="circulo2">
+                            <input type="radio" name="mesa" id="mesa8" class="disponible2">
+                        </div>
+                        <div class="circulo2">
+                            <input type="radio" name="mesa" id="mesa9" class="disponible2">
+                        </div>
+                        <div class="circulo2">
+                            <input type="radio" name="mesa" id="mesa10" class="disponible2">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <textarea name="comentarios" id="comentarios" cols="30" rows="10">Comentarios, alérgenos, preferencias...</textarea>
+
+                <button id="reservar-btn">Reservar</button>
+            </fieldset>
+        </form>
+    </div>
+    
+
     
 </body>
+<footer>
+    <script src="reservas.js"></script>
+</footer>
 </html>
