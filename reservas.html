@@ -5,47 +5,116 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas</title>
+    <link rel="stylesheet" href="global.css">
+
+    <style>
+
+
+        /* AÑADIR EXCEPCIONES EN MEDIAQUERY PARA EL DISPLAY DE LABEL E INPUT CAMBIARLOS A BLOCK */
+        #formwrap {
+            background-color: bisque;
+            padding: 20px;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        form {
+            margin-top: 20px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align:left;
+            padding-left: 20px;
+            font-size: 20px;
+            padding: 0 10vw;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+            text-align: center;
+            
+        }
+
+        fieldset label {
+            margin-left: auto;
+            margin-right: auto;
+            display: inline-flex;
+        }
+
+        fieldset label input{
+            margin-left: 20px;
+            margin-top: 20px;
+
+        }
+
+        select {
+            margin-top: 20px;
+        }
+
+        #comentarios {
+            margin-left: 20vw;
+            margin-top: 20px;
+            margin-right: 20vw;
+            align-self: center;
+        }
+
+        #reservar-btn {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
 </head>
+
+
 <body>
+    <!-- FALTA NAV AQUI -->
     <h2>Reservas</h2>
-    <form action="#">
-        <fieldset>
-            <label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombreReserva" required>
-            <label for="telefonoReserva">Teléfono:</label><input type="tel" name="telefonoReserva" id="telefonoReserva" required>
-            <label for="emailReserva">Email:</label><input type="email" name="emailReserva" id="emailReserva" required>
-            <label for="date">Fecha:</label><input type="date" name="date" id="date">
+    <div id="formwrap">
+        <form action="#">
+            <fieldset>
+                <label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombreReserva" required>
+                <label for="telefonoReserva">Teléfono:</label><input type="tel" name="telefonoReserva" id="telefonoReserva" required>
+                <label for="emailReserva">Email:</label><input type="email" name="emailReserva" id="emailReserva" required>
+                <label for="date">Fecha:</label><input type="date" name="date" id="date">
 
-            <label for="hora">Franja horaria:</label><select name="time" id="time">
-                    <option value="Almuerzo">Almuerzo</option>
-                    <option value="Cena">Cena</option>
-    
-            </select>
+                <label for="hora">Franja horaria:</label><select name="time" id="time">
+                        <option value="Almuerzo">Almuerzo</option>
+                        <option value="Cena">Cena</option>
+        
+                </select>
 
-            <label for="comensales">Comensales:</label><select name="comensales" id="comensales">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
+                <label for="comensales">Comensales:</label><select name="comensales" id="comensales">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
 
-            </select>
+                </select>
 
-            <label for="especiales">Especiales:</label><select name="especiales" id="especiales">
-                    <option value="especial1">especial1</option>
-                    <option value="especial2">especial2</option>
-                    <option value="especial3">especial3</option>
-                    <option value="especial4">especial4</option>
-                    <option value="especial5">especial5</option>
-            </select>
+                <label for="especiales">Especiales:</label><select name="especiales" id="especiales">
+                        <option value="especial1">especial1</option>
+                        <option value="especial2">especial2</option>
+                        <option value="especial3">especial3</option>
+                        <option value="especial4">especial4</option>
+                        <option value="especial5">especial5</option>
+                </select>
 
-            <textarea name="comentarios" id="comentarios" cols="30" rows="10">Comentarios, alérgenos, preferencias...</textarea>
+                <textarea name="comentarios" id="comentarios" cols="30" rows="10">Comentarios, alérgenos, preferencias...</textarea>
 
-            <button id="acceso">Validar</button>
-        </fieldset>
-    </form>
+                <button id="reservar-btn">Reservar</button>
+            </fieldset>
+        </form>
+    </div>
     
 </body>
 </html>
