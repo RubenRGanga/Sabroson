@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+</head>
+<body>
+    <h2>Reservas</h2>
+    <form action="#">
+        <fieldset>
+            <label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombreReserva" required>
+            <label for="telefonoReserva">Teléfono:</label><input type="tel" name="telefonoReserva" id="telefonoReserva" required>
+            <label for="emailReserva">Email:</label><input type="email" name="emailReserva" id="emailReserva" required>
+            <label for="date">Fecha:</label><input type="date" name="date" id="date">
+
+            <label for="hora">Franja horaria:</label><select name="time" id="time">
+                    <option value="Almuerzo">Almuerzo</option>
+                    <option value="Cena">Cena</option>
+    
+            </select>
+
+            <label for="comensales">Comensales:</label><select name="comensales" id="comensales">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+
+            </select>
+
+            <label for="especiales">Especiales:</label><select name="especiales" id="especiales">
+                    <option value="especial1">especial1</option>
+                    <option value="especial2">especial2</option>
+                    <option value="especial3">especial3</option>
+                    <option value="especial4">especial4</option>
+                    <option value="especial5">especial5</option>
+            </select>
+
+            <textarea name="comentarios" id="comentarios" cols="30" rows="10">Comentarios, alérgenos, preferencias...</textarea>
+
+            <button id="acceso">Validar</button>
+        </fieldset>
+    </form>
+    
+</body>
+</html>
