@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas</title>
     <link rel="stylesheet" href="global.css">
+    
 
     <style>
 
@@ -90,7 +91,7 @@
             
         }
         
-        .mesaswrap {
+        #mesaswrap {
             display:block;
             min-width: 50px;
             min-height: 50px;
@@ -134,12 +135,11 @@
     <div id="formwrap">
         <form action="#">
             <fieldset>
-                <label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombreReserva" required>
-                <label for="telefonoReserva">Teléfono:</label><input type="tel" name="telefonoReserva" id="telefonoReserva" required>
-                <label for="emailReserva">Email:</label><input type="email" name="emailReserva" id="emailReserva" required>
-                <label for="date">Fecha:</label><input type="date" name="date" id="date">
-
-                <label for="hora">Franja horaria:</label><select name="time" id="time">
+                <label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombre" required>
+                <label for="telefono">Teléfono:</label><input type="tel" name="telefono" id="telefono" required>
+                <label for="email">Email:</label><input type="email" name="email" id="email" required>
+                <label for="fecha">Fecha:</label><input type="date" name="fecha" id="fecha">
+                <label for="hora">Franja horaria:</label><select name="hora" id="hora">
                         <option value="Almuerzo">Almuerzo</option>
                         <option value="Cena">Cena</option>
         
@@ -165,7 +165,7 @@
                         <option value="especial5">especial5</option>
                 </select>
 
-                <div class="mesaswrap">
+                <div id="mesaswrap">
 
                     <div id="mesas">
                         <div id="mesapeque" class="circulo">
@@ -187,7 +187,7 @@
                     
                     <div id="mesasBig">
                         <div id="mesagrande" class="circulo2">
-                            <input type="radio" name="mesa" id="mesa6" class="disponible2">
+                            <input type="radio" name="mesa" id="mesa6" class="disponible2" value="6">
                         </div>
                         <div class="circulo2">
                             <input type="radio" name="mesa" id="mesa7" class="disponible2">
@@ -213,5 +213,10 @@
         </form>
     </div>
     
+
+    
 </body>
+<footer>
+    <script src="reservas.js"></script>
+</footer>
 </html>
