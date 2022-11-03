@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de control</title>
+    <style>
+
+        #calendario {
+
+            text-align: center;
+            
+
+        }
+        table, td {
+            border:1px solid black;
+            border-spacing: 30;
+            
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            border-collapse: collapse; 
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        .tablaTop {
+            background-color: rgb(239, 233, 227);
+        }
+        #mesas {
+            display: flex;
+            flex-direction: row;
+            margin-left: 8%;
+            margin-right: auto;
+       
+            
+        }
+        .circulo {
+        
+        width: 50px;
+        height: 50px;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background: #5cb85c;
+        
+         }
+                
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div id="calendario">
+        <label for="calen">Elegir fecha:</label>
+
+        <input type="date" id="calen" name="start"
+         value="">
+        </div>
+        <div>
+            <table >
+                <tr>
+                    <td class="tablaTop">Cliente</td>
+                    <td class="tablaTop">Telefono</td>
+                    <td class="tablaTop">Email</td>
+                    <td class="tablaTop">Numero mesa</td>
+                    <td class="tablaTop">Almuerzo / cena</td>
+                    <td class="tablaTop">Nota</td>
+                </tr>
+                <tr>
+                    <td>Mario</td>
+                    <td>Telefono</td>
+                    <td>Email@mail.com</td>
+                    <td>Numero mesa</td>
+                    <td>Almuerzo / cena</td>
+                    <td>Nota</td>
+                </tr>
+                <tr>
+                    <td>Cliente</td>
+                    <td>Telefono</td>
+                    <td>Email</td>
+                    <td>Numero mesa</td>
+                    <td>Almuerzo / cena</td>
+                    <td>Nota</td>
+                </tr>
+                <tr>
+                    <td>Cliente</td>
+                    <td>Telefono</td>
+                    <td>Email</td>
+                    <td>Numero mesa</td>
+                    <td>Almuerzo / cena</td>
+                    <td>Nota</td>
+                </tr>
+                <tr>
+                    <td>Cliente</td>
+                    <td>Telefono</td>
+                    <td>Email</td>
+                    <td>Numero mesa</td>
+                    <td>Almuerzo / cena</td>
+                    <td>Nota</td>
+                </tr>
+                <tr>
+                    <td>Cliente</td>
+                    <td>Telefono</td>
+                    <td>Email</td>
+                    <td>Numero mesa</td>
+                    <td>Almuerzo / cena</td>
+                    <td>Nota</td>
+                </tr>
+                <tr>
+                    <td>Cliente</td>
+                    <td>Telefono</td>
+                    <td>Email</td>
+                    <td>Numero mesa</td>
+                    <td>Almuerzo / cena</td>
+                    <td>Nota</td>
+                </tr>
+                <tr>
+                    <td>Cliente</td>
+                    <td>Telefono</td>
+                    <td>Email</td>
+                    <td>Numero mesa</td>
+                    <td>Almuerzo / cena</td>
+                    <td>Nota</td>
+                </tr>
+            </table>
+        </div>
+        <div id="mesas">
+            <div id="mesa1" class="circulo"></div>
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+        </div>
+        
+    </main>
+</body>
+</html>
