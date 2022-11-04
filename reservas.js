@@ -42,7 +42,7 @@ reservarDOMEl.onclick = function (e) {
        localStorage.setItem('clientes', JSON.stringify(arrayClientes));
     }
 
-    // if (fecha === clientes.fecha && )
+    // FALTA AÑADIR VALIDACION DE FECHA PARA QUE NO RESERVEN PARA FECHAS PASADAS
 
     
 
