@@ -25,6 +25,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 /* colores generales entre rojo y blanco */
 
 :root{
@@ -36,13 +39,31 @@ footer, header, hgroup, menu, nav, section {
     --caqui: #C3B091;
     --beige: #E8C39E;
     --arena: #ECE2C6;
-    --almendra: #EFDECD;  
-    --tipoFuente: 'Montserrat', sans-serif;
+    --almendra: #EFDECD;
+    font-family: 'Montserrat', sans-serif;
 }
+
 head{
   background-color: var(--arena);
 }
-/* parte de dani */
+
+body{
+  background-image: url(images/fondoTextura.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imageindex{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 500px;
+  width: 500px;
+}
+
+/* LOGIN */
+
 .imagelogin {
   margin-top: 20px;
   margin-left: auto;
@@ -162,36 +183,40 @@ height: 70px;
 border-radius: 50%;
 background: #5cb85c;
 }
-/* termina parte dani */
+/* TERMINA LOGIN */
 main{
   height: 600px;
   margin-left: 5%;
   margin-right: 5%;
 }
-/* parte de la barra de navegación */
+/* MENU DE NAVEGACIÓN */
+
 nav {
   margin-top: 10px;
   margin-left: 2%;
   margin-right: 2%;
   text-align: end;
-  vertical-align: bottom; background-color: var(--pardo);  ;
+  vertical-align: bottom; 
+  background-color:  #796e6e;
+  opacity: 85%;
 }
 
 li {
-  color: white;
+  color: #cccccc;
   display: inline-block;
-  padding: 0 10px;
+  padding: 5px 10px;
   transition: background .5s; 
 } 
 .btn {
-  color: var(--arena);
-  background: var(--casta);;
-  padding: 0px 10px;
+  color:  #cccccc;
+  text-shadow: 0px 2px 0px #0a0b0c;
+  background: #796e6e;
+  padding: 5px 10px;
   text-decoration: none; 
   transition: background .5s; 
 }
 .btn:hover {
-  background: var(--cafe);;
+  background: #2b2a2a;
   cursor: pointer; 
   transition: background 0.5s;  
 }
@@ -211,18 +236,20 @@ hr {
     width: 95%;
     height: 30px;
     border-style: solid;
-    border-color: var(--pardo);
+    border-color: #796e6e;
     border-width: 9px 0 0 0;
     border-radius: 15px;
+    opacity: 85%;
   }
   .hrBot {
     width: 95%;
     height: 30px;
     margin-top: 31px;    
     border-style: solid;
-    border-color: var(--pardo);
+    border-color: #796e6e;
     border-width: 0 0 9px 0;
     border-radius: 15px;
+    opacity: 85%;
   }
   #iframe {
     /* text-align: right; */
@@ -316,3 +343,43 @@ hr {
   background: #5cb85c;
 
     }
+
+/* ESTILOS DE MENÚ */
+
+.cartaComida{
+  display: grid;
+  grid-template-columns: repeat(4,4fr);
+  text-align: center;
+  margin-bottom: 2%;
+  
+}
+
+.plato{
+  justify-content: space-between;
+}
+
+.cartaComida div{
+  padding: 10px;
+}
+
+.cartaComida img{
+    width: 200px;
+    height: 140px;
+    
+    border-radius: 5px;
+}
+h6{
+  font-weight: 700;
+}
+
+/* CONTACTOS */
+
+.textoContacto{
+  text-align: center;
+  background-color: bisque;
+}
+
+#lineaTitulo{
+  font-size: 25px;
+  font-weight: 700;
+}
