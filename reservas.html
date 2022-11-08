@@ -109,12 +109,8 @@
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         border-radius: 50%;
-<<<<<<< HEAD
         background: green;
-=======
-        background: #b0f2c2;
         text-align: center;
->>>>>>> 79ab0408edc295e842d777704b17c9ffe1f12da2
         
         }
 
@@ -145,6 +141,13 @@
             border-radius: 50%;
             background: green;
         }
+
+        #printreserva {
+            display: none;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+        }
         
     </style>
 </head>
@@ -168,6 +171,7 @@
     </header>
 
     <h2>Reservas</h2>
+    <p id="printreserva"></p>
     <div id="formwrap">
         <form action="#">
             <fieldset>
@@ -244,7 +248,7 @@
                 </div>
 
 
-                <textarea name="comentarios" id="comentarios" cols="30" rows="10">Comentarios, alérgenos, preferencias...</textarea>
+                <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Comentarios, alérgenos, preferencias..."></textarea>
 
                 <button id="reservar-btn">Reservar</button>
             </fieldset>
