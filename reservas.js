@@ -12,41 +12,6 @@ if (clientes) {
     objClientes
 }
 
-
-
-function printEspecial() {
-    let especiales =`<select class='platoespecial'>
-                        <option value="especial1">especial1</option>
-                        <option value="especial2">especial2</option>
-                        <option value="especial3">especial3</option>
-                        <option value="especial4">especial4</option>
-                        <option value="especial5">especial5</option>
-                    </select>`
-
-    selectDOMEl.innerHTML += especiales
-}
-
-
-// AÑADIR ESPECIALES SEGUN NÚMERO DE COMENSALES
-
-function checkEspeciales () {
-    const comensales = parseInt(document.querySelector('#comensales').value, 10)
-    const platosEspeciales = document.querySelectorAll('#platos .platoespecial').length
-
-    if(comensales > platosEspeciales) {
-            printEspecial()
-        } else {
-            alert("El máximo es un especial por comensal")
-        }
-}
-
-
-
-addEspecial.onclick = function (e) {
-    e.preventDefault()
-    checkEspeciales()
-}
-
 //FALTA POR COMPROBAR RESERVAS EN BASE DE DATOS PARA MOSTRAR EN ROJO LAS MESAS QUE YA ESTEN OCUPADAS Y NO SE PUEDAN RESERVAR
 
 const mesasWrapper = document.querySelector('#mesaswrap')
@@ -63,18 +28,18 @@ function displayMesas() {
     const mesasReservadas = JSON.parse(clientes)
     const hora = document.querySelector('#hora').value
     const mesa = document.querySelectorAll('.circulo')
-    const mesaBig = document.querySelectorAll('.circulo2')
     const radioInput = document.querySelectorAll('input[name="mesa"]')
     
     for (let i = 0; i < mesasReservadas.length; i++) {
         if(mesasReservadas[i].fecha === fechaMesas.value && mesasReservadas[i].hora === hora) {
-           mesa[i].style.backgroundColor = "red";
-           mesa[i].style.backgroundColor = "red";
-           radioInput[i].disabled = true;
-           console.log(radioInput[i])
-           
+            mesa[mesasReservadas[i].mesa -1].style.backgroundColor = "red";
+            radioInput[mesasReservadas[i].mesa -1].disabled = true;
+        } else {
+            mesa[mesasReservadas[i].mesa -1].style.backgroundColor = "green";
+            radioInput[mesasReservadas[i].mesa -1].disabled = false;
         }
-    }
+    } 
+   
 }
 
 fechaMesas.onchange = function (e){
@@ -85,6 +50,41 @@ fechaMesas.onchange = function (e){
 }
 
 
+// AÑADIR ESPECIALES SEGUN NÚMERO DE COMENSALES
+
+function checkEspeciales () {
+    const comensales = parseInt(document.querySelector('#comensales').value, 10)
+    const platosEspeciales = document.querySelectorAll('#platos .platoespecial').length
+
+    if(comensales > platosEspeciales) {
+            printEspecial()
+        } else {
+            alert("El máximo es un especial por comensal")
+        }
+}
+
+function printEspecial() {
+    let especiales =`<select class='platoespecial'>
+                        <option value="especial1">especial1</option>
+                        <option value="especial2">especial2</option>
+                        <option value="especial3">especial3</option>
+                        <option value="especial4">especial4</option>
+                        <option value="especial5">especial5</option>
+                    </select>`
+
+    selectDOMEl.innerHTML += especiales
+}
+
+
+
+addEspecial.onclick = function (e) {
+    e.preventDefault()
+    checkEspeciales()
+}
+
+
+
+// BOTON DE RESERVAS Y CREACION DE CLIENTES EN BASE DE DATOS
 
 reservarDOMEl.onclick = function (e) {
 
@@ -93,7 +93,7 @@ reservarDOMEl.onclick = function (e) {
     const nombre = document.querySelector ('#nombre').value
     const email = document.querySelector ('#email').value
     const telefono = document.querySelector ('#telefono').value
-    const plato = document.querySelector ('.platoespecial').value
+    const especiales = []
     const mensaje = document.querySelector ('#comentarios').value
     const fecha = document.querySelector ('#fecha').value
     const hora = document.querySelector('#hora').value
@@ -109,7 +109,6 @@ reservarDOMEl.onclick = function (e) {
         hora,
         mensaje,
         fecha,
-        plato,
         especiales,
         comensales
     }
@@ -126,6 +125,17 @@ reservarDOMEl.onclick = function (e) {
        localStorage.setItem('clientes', JSON.stringify(arrayClientes));
     }
     }
+
+    // AÑADIR ESPECIALES ELEGIDOS A LA BASE DE DATOS
+    
+    const dataEspeciales = document.querySelectorAll(".platoespecial")
+    console.log(dataEspeciales)
+    
+
+    dataEspeciales.forEach(element => {
+        cliente.especiales.push(element.value)
+    });
+    
 
     // COMPARAMOS LA FECHA DEL FORM CON LA FECHA DE HOY EN MILISEGUNDOS Y SI ES PASADA NO AÑADE RESERVA
 
