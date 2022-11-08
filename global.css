@@ -26,6 +26,87 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+/* MEDIA QUERY */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px){
+
+  #formwrap {
+    width: 80%;
+    align-items:flex-end
+  }
+  form {
+    min-width: 80%;
+    flex-wrap: wrap;
+  }
+
+
+  #mesaswrap {
+    display:block;
+    align-content: flex-start;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  fieldset {
+    margin-left: -50px;
+  }
+
+  .textoContacto {
+    align-content: center;
+  }
+
+
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px){
+
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px){
+  #formwrap {
+    width: 80%;
+    align-items:flex-end
+  }
+  form {
+    min-width: 80%;
+    flex-wrap: wrap;
+  }
+
+
+  #mesaswrap {
+    display:block;
+    align-content: flex-start;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  fieldset {
+    margin-left: -50px;
+  }
+  .contacto {
+    max-width: 500px;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px){
+  fieldset label {
+    margin-left: 20px;
+    flex-wrap: wrap;
+  }
+
+  .contacto {
+    padding-bottom: 5%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px){
+
+
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 /* colores generales entre rojo y blanco */
@@ -50,7 +131,7 @@ head{
 body{
   background-image: url(images/fondoTextura.jpeg);
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
 }
 
@@ -62,7 +143,7 @@ body{
   width: 500px;
 }
 
-/* LOGIN */
+/* LOGIN-RESERVAS*/
 
 .imagelogin {
   margin-top: 20px;
@@ -72,13 +153,21 @@ body{
   height: 300px;
   width: 300px;
 }  
+
 #formwrap {
-  background-color: var(--arena);
-  padding: 20px;
+  background-color: bisque;
   text-align: center;
   display: block;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
+  box-shadow:
+  0 0 10px rgb(0, 0, 0),
+  0 0 21px rgb(201, 201, 201),
+  0 0 42px rgb(158, 158, 158),
+  0 0 151px rgb(112, 112, 112);
+  
 }
 
 form {
@@ -93,11 +182,13 @@ form {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 40px;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  
+  color:  var(--cafe);
+  text-shadow: 0px 2px 2px #8f8f8f;
+  font-family: 'Montserrat', sans-serif;
 }
 
 fieldset label {
@@ -155,7 +246,7 @@ select {
   display:block;
   min-width: 50px;
   min-height: 50px;
-  margin-left: 20vw;
+  margin-left: auto;
   margin-right: auto;
 }
 
@@ -168,7 +259,7 @@ height: 50px;
 -moz-border-radius: 50%;
 -webkit-border-radius: 50%;
 border-radius: 50%;
-background: #b0f2c2;
+background: green;
 
 }
 
@@ -181,8 +272,12 @@ height: 70px;
 -moz-border-radius: 50%;
 -webkit-border-radius: 50%;
 border-radius: 50%;
-background: #5cb85c;
+background: green;
 }
+
+
+
+
 /* TERMINA LOGIN */
 main{
   height: 600px;
@@ -232,25 +327,8 @@ hr {
   box-sizing: border-box;
 }
 
-  .hrTop {
-    width: 95%;
-    height: 30px;
-    border-style: solid;
-    border-color: #796e6e;
-    border-width: 9px 0 0 0;
-    border-radius: 15px;
-    opacity: 85%;
-  }
-  .hrBot {
-    width: 95%;
-    height: 30px;
-    margin-top: 31px;    
-    border-style: solid;
-    border-color: #796e6e;
-    border-width: 0 0 9px 0;
-    border-radius: 15px;
-    opacity: 85%;
-  }
+
+
   #iframe {
     /* text-align: right; */
     display: flex;
@@ -328,7 +406,7 @@ hr {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background: #b0f2c2;
+  background: green;
 
     }
     .circulo2 {
@@ -340,7 +418,7 @@ hr {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background: #5cb85c;
+  background: green;
 
     }
 
@@ -377,9 +455,35 @@ h6{
 .textoContacto{
   text-align: center;
   background-color: bisque;
+  margin-left:15%;
+  margin-bottom: 20px;
 }
 
 #lineaTitulo{
-  font-size: 25px;
+  margin-top: 20px;
+  font-size: 35px;
   font-weight: 700;
+  margin-bottom: 10px;
+
+}
+
+.contacto {
+  display: flex;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  min-width: 500px;
+  align-items: center;
+  background-color: bisque;
+  flex-wrap: wrap;
+  box-shadow:
+  0 0 10px rgb(0, 0, 0),
+  0 0 21px rgb(201, 201, 201),
+  0 0 42px rgb(158, 158, 158),
+  0 0 151px rgb(112, 112, 112);
+}
+
+#contactoh2 {
+  margin-top: 5%;
 }
