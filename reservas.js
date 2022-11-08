@@ -129,8 +129,6 @@ reservarDOMEl.onclick = function (e) {
     // AÑADIR ESPECIALES ELEGIDOS A LA BASE DE DATOS
     
     const dataEspeciales = document.querySelectorAll(".platoespecial")
-    console.log(dataEspeciales)
-    
 
     dataEspeciales.forEach(element => {
         cliente.especiales.push(element.value)
@@ -149,8 +147,12 @@ reservarDOMEl.onclick = function (e) {
         addReserva()
     }
 
-    // FALTA IMPRIMIR INFO DE RESERVA EN LA PAGINA CUANDO SE COMPLETE
+    //IMPRIMIR INFO DE RESERVA EN LA PAGINA CUANDO SE COMPLETE
 
-    // FALTA QUE GUARDE EL MENSAJE COMO CADENA VACIA+ CONTENIDO PARA QUE NO APAREZCA UNDEFINED EN LOCAL STORAGE
+    const reservaDOMEl = document.querySelector('#printreserva')
+
+    reservaDOMEl.style.display = 'block'
+
+    reservaDOMEl.innerHTML += `Reserva realizada con éxito a nombre de ${cliente.nombre} para el día ${(cliente.fecha).split('-').reverse().join('-')}. Esperamos ${cliente.comensales} comensales en el servicio de ${cliente.hora}. Para cualquier modificación a su reserva contáctenos via email o teléfono.`
 
 }
