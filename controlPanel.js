@@ -32,7 +32,7 @@ addUser2.onclick = function (e) {
         password,
 
     }
-    console.log(usuario)
+    // console.log(usuario)
 
     if (usuarios) {
         const arrayUsuario = JSON.parse(usuarios)
@@ -41,12 +41,29 @@ addUser2.onclick = function (e) {
         localStorage.setItem('usuarios', JSON.stringify(arrayUsuario));
     }
 
-    window.location.reload()
+  
+
+    const inputU = document.querySelector('#user');
+    const inputP = document.querySelector('#password');
+
+    if ((inputU.reportValidity()) === true && (inputP.reportValidity()) === true) {
+
+
+        alert("Añadido")
+        window.location.reload()
+    }
+
+
+    
+
+      
+    
 
 }
+
 const clientesT = localStorage.getItem('clientes')
 const tablaUsuarios = JSON.parse(clientesT)
-console.log(tablaUsuarios)
+// console.log(tablaUsuarios)
 
 const buscarTabla = document.querySelector('#buscar')
 buscarTabla.onclick = function (e) {
@@ -60,11 +77,13 @@ buscarTabla.onclick = function (e) {
 
     for (let i = 0; i < buscarItem.length; i++) {
         const addn = document.createElement("TR");
-        addn.setAttribute("id", "tdel" + i);
+        addn.setAttribute("id", "tdel" + i,);
+        addn.setAttribute("class","tbnew");
         // console.log(buscarItem[i])
 
+        console.log(buscarItem[i].especiales)
 
-        addn.innerHTML = "<tr><td>" + buscarItem[i].nombre + "</td><td>" + buscarItem[i].telefono + "</td><td>" + buscarItem[i].email + "</td><td>" + buscarItem[i].mesa + "</td></tr>" + "</td><td>" + buscarItem[i].hora + "</td></tr>" + "</td><td>" + buscarItem[i].nota + "</td></tr>" + "</td><td>" + buscarItem[i].plato + "</td></tr>" +`<button id="cancelar${[i]}">cancelar</button>`;
+        addn.innerHTML = "<tr><td>" + buscarItem[i].nombre + "</td><td>" + buscarItem[i].telefono + "</td><td>" + buscarItem[i].email + "</td><td>" + buscarItem[i].mesa + "</td></tr>" + "</td><td>" + buscarItem[i].hora + "</td></tr>" + "</td><td>" + buscarItem[i].nota + "</td></tr>" + "</td><td>" + "<select>" + "<option>"+ buscarItem[i].especiales[0] + "</option>" + "<option>"+ buscarItem[i].especiales[1] + "</option>" + "<option>"+ buscarItem[i].especiales[2] + "</option>" + "</select>" + "</td></tr>" + "<tr><td>"  +`<button id="cancelar${[i]}">cancelar</button>`+ "</td></tr>" ;
 
         document.getElementById("tableBody").appendChild(addn);
 
